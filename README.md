@@ -14,19 +14,32 @@ To implement univariate Linear Regression to fit a straight line using least squ
 5.	Use the slope m and the y -intercept to form the equation of the line.
 6.	Obtain the straight line equation Y=mX+b and plot the scatterplot.
 ## Program
-```
+~~~
+Developed by: Vignesh S
+Register no: 212223230240
 
+import numpy as np
+import matplotlib.pyplot as py
+x=np.array(eval(input()))
+y=np.array(eval(input()))
+x_mean=np.mean(x)
+y_mean=np.mean(y)
+num,denom=0,0
+for i in range (len(x)):
+    num+=(x[i]-x_mean)*(y[i]-y_mean)
+    denom+=(x[i]-x_mean)**2
+m=num/denom
+b=y_mean-(m*x_mean)
+print(m,b)
+y_pred=(m*x)+b
+print(y_pred)
+py.scatter(x,y,color='pink')
+py.plot(x,y_pred,color='blue')
+py.show()
+~~~
 
-
-
-
-
-```
 ## Output
-</br>
-</br>
-</br>
-</br>
+![image](https://github.com/Vigneshvikiii/Univariate-Linear-Regression/assets/147474483/50d54eeb-4e2b-4c6a-bc2f-c206edd3fd1b)
 
 ## Result
 Thus the univariate Linear Regression was implemented to fit a straight line using least squares.
